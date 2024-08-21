@@ -1,0 +1,47 @@
+﻿@model IEnumerable<_20_Identity.Models.ViewModels.RoleVM>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>Edit</th>
+            <th>Remove</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    <a asp-action="AssignedUser" asp-route-itemid="@item.Id" class="btn btn-outline-success btn-sm">Assigned The User</a>
+                </td>
+                <td>
+                    <a asp-action="Remove" asp-route-itemid="@item.Id" class="btn btn-outline-danger btn-sm">Remove</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<tr>
+
+</tr>
